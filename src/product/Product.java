@@ -1,9 +1,11 @@
 package product;
 
+import java.util.Map;
 import java.util.Objects;
 
 
 public class Product {
+
     private String name;
     private double price;
     private int amount;
