@@ -117,6 +117,21 @@ public class Main {
             System.out.println(f.getKey() + ": " + f.getValue());
         }
 
+        System.out.println("ДЗ.2.2");
+        Map<Integer,String>ff=new LinkedHashMap<>();
+        ff.put(1,"one");
+        ff.put(2,"two");
+        ff.put(3,"three");
+        ff.put(4,"four");
+        ff.put(5,"five");
+        ff.put(6,"six");
+        ff.put(7,"seven");
+        ff.put(8,"eight");
+        ff.put(9,"nine");
+        ff.put(10,"ten");
+        System.out.println(ff);
+
+
 
 
 
