@@ -8,12 +8,12 @@ public class Product {
 
     private String name;
     private double price;
-    private int kg;
+    private int amount;
 
-    public Product(String name, double price, int kg) {
+    public Product(String name, double price, int amount) {
         setName(name);
         setPrice(price);
-        setKg(kg);
+        setAmount(amount);
     }
 
     public String getName() {
@@ -24,8 +24,8 @@ public class Product {
         return price;
     }
 
-    public int getKg() {
-        return kg;
+    public int getAmount() {
+        return amount;
     }
 
     public void setName(String name) {
@@ -42,17 +42,21 @@ public class Product {
         this.price = price;
     }
 
-    public void setKg(int kg) {
-        if (kg <= 0) {
+    public void setAmount(int amount) {
+        if (amount <= 0) {
             throw new IllegalArgumentException("Заполните карточку товара полностью!");
         }
-        this.kg = kg;
+        this.amount = amount;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Product product = (Product) o;
         return Objects.equals(name, product.name);
     }
@@ -64,7 +68,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Продукт - " +name + ", цена - " + price +", кол-во - " + kg;
+        return "Продукт - " +name + ", цена - " + price +", кол-во - " + amount;
     }
 
 

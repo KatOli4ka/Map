@@ -1,16 +1,16 @@
 package product;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Recipe {
     private String name;
-    private double totalCost;
-    private ProductList productList;
+    private int price;
+    private final Map<Product,Integer> products;
 
-    public Recipe(String name, double totalCost, ProductList productList) {
+    public Recipe(String name) {
         this.name = name;
-        this.totalCost = totalCost;
-        this.productList = productList;
+        this.products = new HashMap();
+        this.price=0;
     }
 
     public String getName() {
@@ -21,27 +21,33 @@ public class Recipe {
         this.name = name;
     }
 
-    public double getTotalCost() {
-
-        return totalCost;
+    public int getPrice() {
+        return price;
     }
 
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public ProductList getProductList() {
-        return productList;
+    public void addProducts(Product product) {
+        addProducts(product,1);
     }
-
-    public void setProductList(ProductList productList) {
-        this.productList = productList;
+    public void addProducts(Product product,int amount) {
+        if (products.containsKey(product)) {
+            throw new IllegalArgumentException("Такой продукт уже есть в списке!");
+        }
+        products.put(product,amount);
+        price+=amount*product.getPrice();
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         Recipe recipe = (Recipe) o;
         return Objects.equals(name, recipe.name);
     }
@@ -53,6 +59,6 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return name + ", полная стоимость - " + totalCost +". "+ productList;
+        return name + ", цена - " + price +". "+ products;
     }
 }

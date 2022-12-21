@@ -15,75 +15,40 @@ public class Main {
         phoneBook.print();
 
 
-//        phoneBook.put("Иванов Павел Иванович","+78956585555");
-//        phoneBook.put("Иванов Иван Петрвич","85595263588");
-//        phoneBook.put("Иванов Иван Иванович","8555623569");
-//        phoneBook.put("Иванис Павел Иванович","+78956585755");
-//        phoneBook.put("Превалов Иван Петрвич","85595263988");
-//        phoneBook.put("Локов Павел Иванович","+78956582555");
-//        phoneBook.put("Локов Пал Иванович","85595263588");
-//        phoneBook.put("Ивнов Павел Иванович","+78956785155");
-//        phoneBook.put("Ивов Иван Петрвич","85595263538");
-//        phoneBook.put("Инов Олег Иванович","+78956585558");
-//        phoneBook.put("Иванов Иван Долович","85595263580");
-//        phoneBook.put("Иваров Павел Иванович","+78956585551");
-//        phoneBook.put("Дологоров Иван Петрвич","85595263582");
-//        phoneBook.put("Жолов Павел Иванович","+78956585553");
-//        phoneBook.put("Топоров Иван Петрвич","85595263584");
-//        phoneBook.put("Петров Павел Иванович","+78956584555");
-//        phoneBook.put("Хоолов Иван Петрвич","85595243588");
-//        phoneBook.put("Цолов Павел Иванович","+78946585555");
-//        phoneBook.put("Волов Иван Петрвич","85595264488");
+        System.out.println("---------------");
+        System.out.println("ДЗ-1.2");
+        Product flour = new Product("Мука", 78.98, 1);
+        Product buckwheat = new Product("Греча", 65.96, 1);
+        Product bread = new Product("Хлеб", 35.0, 1);
+        Product milk = new Product("Молоко", 71.99, 1);
+        Product meat = new Product("Мясо", 399.00, 1);
+        Set<Product> products = new HashSet<>();
+        products.add(flour);
+        products.add(bread);
+        System.out.println(products);
+        Set<Product> products2 = new HashSet<>();
+        products2.add(meat);
+        products2.add(milk);
+        System.out.println(products2);
+
+        ProductList productList = new ProductList();
+        productList.addProduct(new Product("каша", 56.0, 1));
+        ProductList productList2 = new ProductList();
+        productList2.addProduct(new Product("банан", 76.0, 1));
+        System.out.println(productList);
+        System.out.println(productList2);
+
+        Recipe one = new Recipe("New recipe 1");
+        Recipe two = new Recipe("New recipe 2");
+        one.addProducts(meat,2);
+        one.addProducts(milk,3);
+        two.addProducts(flour,1);
+        two.addProducts(buckwheat,4);
+        System.out.println(one.toString());
+        System.out.println(two.toString());
 
 
-
-//        System.out.println("---------------");
-//        System.out.println("ДЗ-1.2");
-//        Product flour = new Product("Мука", 78.98, 2);
-//        Product buckwheat = new Product("Греча", 65.96, 1);
-//        Product bread = new Product("Хлеб", 35.0, 2);
-//        Product milk = new Product("Молоко", 71.99, 2);
-//        Product meat = new Product("Мясо", 399.00, 2);
-//        Set<Product> products = new HashSet<>();
-//        products.add(flour);
-//        products.add(bread);
-//        System.out.println(products);
-//        Set<Product> products2 = new HashSet<>();
-//        products2.add(meat);
-//        products2.add(milk);
-//        System.out.println(products2);
-//
-//        ProductList productList = new ProductList(products);
-//        productList.addProduct(new Product("каша", 56.0, 3));
-//        ProductList productList2 = new ProductList(products2);
-//        productList2.addProduct(new Product("банан", 76.0, 3));
-//        System.out.println(productList);
-//        System.out.println(productList2);
-//
-////        Map<Product,Integer> newProdList=new HashMap<>();
-////        newProdList.put(flour,null);
-////        newProdList.put(flour,2);
-////        for (Map.Entry<Product,  Integer> qq: newProdList.entrySet()) {
-////            System.out.println(qq.getKey() + ": " + qq.getValue());
-////        }
-////        try{
-////            if (newProdList.containsKey(flour));
 ////
-////        } catch (Exception e){
-////            System.out.println("Такой продукт уже есть в списке!");
-////        }
-//////        System.out.println("jjjj");
-//
-//        Recipe one = new Recipe("Новый рецепт 1", 78.0, productList);
-//        Recipe two = new Recipe("Новый рецепт 2", 23.0, productList2);
-//        Set<Recipe> recipes = new HashSet<>();
-//        recipes.add(one);
-//        recipes.add(two);
-////        for (Map.Entry<ProductList, String> contact: phoneBook.entrySet()) {
-////            System.out.println(contact.getKey() + ": " + contact.getValue());
-////        }
-//        System.out.println(recipes);
-//
 //        System.out.println("---------------");
 //        System.out.println("ДЗ-1.3");
 //        Map<String, Integer> map = new LinkedHashMap<>();
