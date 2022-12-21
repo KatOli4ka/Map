@@ -7,8 +7,6 @@ public class Recipe {
     private double totalCost;
     private ProductList productList;
 
-
-
     public Recipe(String name, double totalCost, ProductList productList) {
         this.name = name;
         this.totalCost = totalCost;
@@ -24,6 +22,7 @@ public class Recipe {
     }
 
     public double getTotalCost() {
+
         return totalCost;
     }
 
@@ -54,9 +53,6 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Рецепт - " + name + '\'' +
-                ", полная стоимость - " + totalCost +
-                ", список продуктов - " + productList +
-                '}';
+        return name + ", полная стоимость - " + totalCost +". "+ productList;
     }
 }

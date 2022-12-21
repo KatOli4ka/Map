@@ -41,25 +41,64 @@ public class Main {
         Set<Product> products = new HashSet<>();
         products.add(flour);
         products.add(bread);
-        products.add(buckwheat);
-        products.add(meat);
-        products.add(milk);
         System.out.println(products);
+        Set<Product> products2 = new HashSet<>();
+        products2.add(meat);
+        products2.add(milk);
+        System.out.println(products2);
 
         ProductList productList = new ProductList(products);
         productList.addProduct(new Product("каша", 56.0, 3));
-        productList.addProduct(new Product("банан", 76.0, 3));
-//  исключение      productList.addProduct(milk);
+        ProductList productList2 = new ProductList(products2);
+        productList2.addProduct(new Product("банан", 76.0, 3));
         System.out.println(productList);
+        System.out.println(productList2);
 
-        Recipe one = new Recipe("Новый рецепт1", 78.0, productList);
-        Recipe two = new Recipe("Новый рецепт2", 23.0, productList);
-        Recipe three = new Recipe("Новый рецепт3", 65.0, productList);
+
+        Map<Product,Integer> newProdList=new HashMap<>();
+        newProdList.put(flour,2);
+        for (Map.Entry<Product,  Integer> qq: newProdList.entrySet()) {
+            System.out.println(qq.getKey() + ": " + qq.getValue());
+        }
+
+
+        Recipe one = new Recipe("Новый рецепт 1", 78.0, productList);
+        Recipe two = new Recipe("Новый рецепт 2", 23.0, productList2);
+
         Set<Recipe> recipes = new HashSet<>();
         recipes.add(one);
         recipes.add(two);
-        recipes.add(three);
-        System.out.println(recipes.toString());
+        System.out.println(recipes);
+
+        System.out.println("ДЗ-1.3");
+        Map<String, Integer> map = new LinkedHashMap<>();
+        map.put("Ivan",1);
+        map.put("Boris",2);
+        map.put("Lena",3);
+        map.put("Lena",3);
+        try{
+            if (map.containsKey("Lena"));
+
+        } catch (Exception e){
+                System.out.println("Ключ с таким значением уже есть!");
+            }
+        System.out.println("jjjj");
+
+
+
+        for (Map.Entry<String,Integer> ww: map.entrySet()) {
+            System.out.println(ww.getKey() + ": " + ww.getValue());
+        }
+
+
+//        addMethod(map, "Алексей", 3000);
+//        addMethod(map, "Дмитрий", 9000);
+//        addMethod(map, "Антон", 3000);
+//        addMethod(map, "Алексей", 7000);
+//        addMethod(map, "Антон", 8000);
+
+        System.out.println(map.toString());
+
 
         System.out.println("ДЗ-2.1");
         Map<String, List<Integer>> collection=new HashMap<>();
@@ -132,12 +171,11 @@ public class Main {
         System.out.println(ff);
 
 
-
-
-
-
-
-
-
     }
-}
+    public static void addMethod(Map<String, Integer> map, String key, Integer value) {
+        if (map.containsKey(key)) {
+            map.put(key, map.get(key) + value);
+        } else {
+            map.put(key, value);
+        }
+}}
