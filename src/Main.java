@@ -5,6 +5,7 @@ import product.Recipe;
 import java.util.*;
 
 public class Main {
+    private  static final Map<String, Integer> map = new HashMap<>();
     public static void main(String[] args) {
         System.out.println("ДЗ-1.1");
         PhoneBook phoneBook=new PhoneBook();
@@ -47,106 +48,99 @@ public class Main {
         System.out.println(one.toString());
         System.out.println(two.toString());
 
+        System.out.println("---------------");
+        System.out.println("ДЗ-1.3");
+        map.put("str1",2);
+        System.out.println(map);
+        tryPut("str2",1);
+        System.out.println(map);
+        try {
+            tryPut("str1", 2);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println(map);
+        tryPut("str1",5);
+        System.out.println(map);
 
-////
-//        System.out.println("---------------");
-//        System.out.println("ДЗ-1.3");
-//        Map<String, Integer> map = new LinkedHashMap<>();
-//        map.put("Ivan",1);
-//        map.put("Boris",2);
-//        map.put("Lena",3);
-//        map.put("Lena",3);
-//        try{
-//            if (map.containsKey("Lena"));
-//
-//        } catch (Exception e){
-//                System.out.println("Ключ с таким значением уже есть!");
-//            }
-//
-//        for (Map.Entry<String,Integer> ww: map.entrySet()) {
-//            System.out.println(ww.getKey() + ": " + ww.getValue());
-//        }
-//        System.out.println(map.toString());
-//
-//
-//        System.out.println("---------------");
-//        System.out.println("ДЗ-2.1");
-//        Map<String, List<Integer>> collection=new HashMap<>();
-//        Random random = new Random();
-//        List<Integer> numbers1 = new ArrayList<>();
-//        while (numbers1.size() < 3) {
-//            numbers1.add(random.nextInt(1000));
-//        }
-//        int sum1 = numbers1.stream().mapToInt(Integer::intValue).sum();
-//
-//        List<Integer> numbers2 = new ArrayList<>();
-//        while (numbers2.size() < 3) {
-//            numbers2.add(random.nextInt(1000));
-//        }
-//        int sum2 = numbers2.stream().mapToInt(Integer::intValue).sum();
-//
-//        List<Integer> numbers3 = new ArrayList<>();
-//        while (numbers3.size() < 3) {
-//            numbers3.add(random.nextInt(1000));
-//        }
-//        int sum3 = numbers3.stream().mapToInt(Integer::intValue).sum();
-//
-//        List<Integer> numbers4 = new ArrayList<>();
-//        while (numbers4.size() < 3) {
-//            numbers4.add(random.nextInt(1000));
-//        }
-//        int sum4 = numbers4.stream().mapToInt(Integer::intValue).sum();
-//
-//        List<Integer> numbers5 = new ArrayList<>();
-//        while (numbers5.size() < 3) {
-//            numbers5.add(random.nextInt(1000));
-//        }
-//        int sum5 = numbers5.stream().mapToInt(Integer::intValue).sum();
-//
-//        collection.put("строка 1", numbers1);
-//        collection.put("строка 2", numbers2);
-//        collection.put("строка 3", numbers3);
-//        collection.put("строка 4", numbers4);
-//        collection.put("строка 5", numbers5);
-//        for (Map.Entry<String,  List<Integer>> f: collection.entrySet()) {
-//            System.out.println(f.getKey() + ": " + f.getValue());
-//        }
-//        numbers1.clear();
-//        numbers1.add(sum1);
-//        numbers2.clear();
-//        numbers2.add(sum2);
-//        numbers3.clear();
-//        numbers3.add(sum3);
-//        numbers4.clear();
-//        numbers4.add(sum4);
-//        numbers5.clear();
-//        numbers5.add(sum5);
-//        System.out.println();
-//        for (Map.Entry<String,  List<Integer>> f: collection.entrySet()) {
-//            System.out.println(f.getKey() + ": " + f.getValue());
-//        }
-//
-//        System.out.println("---------------");
-//        System.out.println("ДЗ.2.2");
-//        Map<Integer,String>ff=new LinkedHashMap<>();
-//        ff.put(1,"one");
-//        ff.put(2,"two");
-//        ff.put(3,"three");
-//        ff.put(4,"four");
-//        ff.put(5,"five");
-//        ff.put(6,"six");
-//        ff.put(7,"seven");
-//        ff.put(8,"eight");
-//        ff.put(9,"nine");
-//        ff.put(10,"ten");
-//        System.out.println(ff);
-//
-//
-//    }
-//    public static void addMethod(Map<String, Integer> map, String key, Integer value) {
-//        if (map.containsKey(key)) {
-//            map.put(key, map.get(key) + value);
-//        } else {
-//            map.put(key, value);
-//        }
-}}
+        System.out.println("---------------");
+        System.out.println("ДЗ-2.1");
+        Map<String, List<Integer>> collection=new HashMap<>();
+        Random random = new Random();
+        List<Integer> numbers1 = new ArrayList<>();
+        while (numbers1.size() < 3) {
+            numbers1.add(random.nextInt(1000));
+        }
+        int sum1 = numbers1.stream().mapToInt(Integer::intValue).sum();
+
+        List<Integer> numbers2 = new ArrayList<>();
+        while (numbers2.size() < 3) {
+            numbers2.add(random.nextInt(1000));
+        }
+        int sum2 = numbers2.stream().mapToInt(Integer::intValue).sum();
+
+        List<Integer> numbers3 = new ArrayList<>();
+        while (numbers3.size() < 3) {
+            numbers3.add(random.nextInt(1000));
+        }
+        int sum3 = numbers3.stream().mapToInt(Integer::intValue).sum();
+
+        List<Integer> numbers4 = new ArrayList<>();
+        while (numbers4.size() < 3) {
+            numbers4.add(random.nextInt(1000));
+        }
+        int sum4 = numbers4.stream().mapToInt(Integer::intValue).sum();
+
+        List<Integer> numbers5 = new ArrayList<>();
+        while (numbers5.size() < 3) {
+            numbers5.add(random.nextInt(1000));
+        }
+        int sum5 = numbers5.stream().mapToInt(Integer::intValue).sum();
+
+        collection.put("строка 1", numbers1);
+        collection.put("строка 2", numbers2);
+        collection.put("строка 3", numbers3);
+        collection.put("строка 4", numbers4);
+        collection.put("строка 5", numbers5);
+        for (Map.Entry<String,  List<Integer>> f: collection.entrySet()) {
+            System.out.println(f.getKey() + ": " + f.getValue());
+        }
+        numbers1.clear();
+        numbers1.add(sum1);
+        numbers2.clear();
+        numbers2.add(sum2);
+        numbers3.clear();
+        numbers3.add(sum3);
+        numbers4.clear();
+        numbers4.add(sum4);
+        numbers5.clear();
+        numbers5.add(sum5);
+        System.out.println();
+        for (Map.Entry<String,  List<Integer>> f: collection.entrySet()) {
+            System.out.println(f.getKey() + ": " + f.getValue());
+        }
+
+        System.out.println("---------------");
+        System.out.println("ДЗ.2.2");
+        Map<Integer,String>ff=new LinkedHashMap<>();
+
+        for (int i = 0; i < 10; i++) {
+            int key;
+            if (i % 2 == 0) {
+                key = 10;
+            } else
+                key = -10;
+            ff.put(key + i, String.valueOf(i));
+        }
+
+        for (Map.Entry<Integer, String> ent: ff.entrySet()) {
+            System.out.println(ent.getKey() + ": " + ent.getValue());
+        }
+    }
+    public static void tryPut(String key, Integer value) {
+        if (map.containsKey(key)&&map.get(key).equals(value) ) {
+            throw new IllegalArgumentException("Такой ключ и значение уже есть в карте!");
+        }
+        map.put(key,value);
+    }
+}
